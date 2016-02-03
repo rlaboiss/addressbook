@@ -8,7 +8,7 @@
 
 @dircategory Emacs
 @direntry
-* Addressbook: (addressbook).   Simple addressbook for Emacs
+* Addressbook: (abook).   Simple addressbook for Emacs
 @end direntry
 
 @c Version and Contact Info
