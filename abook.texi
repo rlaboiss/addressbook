@@ -64,6 +64,8 @@ Invariant Sections.
 * Importing and exporting contact data::  
 @end menu
 
+@raisesections
+
 @node Summary, Getting the program, Top, Top
 @section Summary
 

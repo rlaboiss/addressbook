@@ -1,3 +1,8 @@
+2016-02-03  Rafael Laboissière <rafael@laboissiere.net>
+
+	* abook.texi: Add @raisesections directive and avoid makeinfo
+	error "raising the section level of @section which is too low".
+
 2011-04-22  Jose E. Marchesi  <jemarch@gnu.org>
 
 	* abook.el (abook): Handle searches with several matches by asking
