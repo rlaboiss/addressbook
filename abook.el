@@ -1602,35 +1602,6 @@ Commands:
   (setq major-mode 'abook-summary-mode))
 
 ;; * General commands (usable from all addressbook modes)
-1
-(defun abook-send-email ()
-  "Send an email to current contact"
-  (interactive)
-  (let* ((card (abook-get-card abook-current-card))
-         (mail-addresses (vcard-ref card (list "email")))
-         mail-names name i attr sendto-address letter)
-    (dotimes (i (length mail-addresses))
-      (let* ((attr (nth i mail-addresses))
-             (attr-type (car (vcard-attr-get-parameter attr "type"))))
-        (if (equal attr-type "internet")
-            (setq mail-names (cons (list (car (vcard-attr-get-values attr))
-                                         (+ ?a i))
-                                   mail-names)))))
-    (setq mail-names (reverse mail-names))
-    (if (not mail-names)
-        (message "Contact doesnt have a suitable smtp address")
-      (if (equal (length mail-names) 1)
-          (setq sendto-address (car (car mail-names)))
-        (setq letter (abook-fast-selection mail-names "Select email address to send mail to"))
-        (dolist (name mail-names)
-          (if (equal letter
-                     (cadr name))
-              (setq sendto-address (car name)))))
-      ;; Send the email
-      (if sendto-address
-          (compose-mail-other-frame (concat
-                                     "\"" (abook-get-card-fn) "\""
-                                     " <" sendto-address ">"))))))
 
 (defun abook-delete-card ()
   "Delete the current card"
