@@ -1025,7 +1025,7 @@ When ressource is of type URL, we use url package to get the image data."
       (let* ((card (abook-get-card abook-current-card))
              (group (abook-get-group group-symbol))
              (group-attrs (abook-get-group-props group))
-             group-aregion-begin group-region-end)
+             group-region-begin group-region-end)
         (abook-contact-erase-attr-region)
         (setq group-region-begin (point))
         (abook-contact-display-attribute attr-index)
